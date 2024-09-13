@@ -15,11 +15,16 @@
   ],
   "author": "Harikesh Kumar Sharma",
   "license": "ISC",
-  "description": "",
+  "description": "Part of a personal airline management system project. Manages sending reminders to users about upcoming flights via Gmail, offering APIs for scheduling and managing reminders. Ensures integration with the BookingService for retrieving booking details and AuthService for user authentication. Implemented using MVC architecture to maintain a structured and scalable backend.",
   "dependencies": {
     "axios": "^1.7.7",
     "body-parser": "^1.20.3",
     "dotenv": "^16.4.5",
-    "express": "^4.21.0"
+    "express": "^4.21.0",
+    "mysql2": "^3.11.2",
+    "node-cron": "^3.0.3",
+    "nodemailer": "^6.9.15",
+    "sequelize": "^6.37.3",
+    "sequelize-cli": "^6.6.2"
   }
 }
