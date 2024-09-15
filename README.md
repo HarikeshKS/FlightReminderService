@@ -24,6 +24,6 @@ npm install
 npm start
 
 - Don't forget to setup your .env file.
-
+```
 ## TODO
 - Update the notification ticket model as per the changes in the migrations.
