@@ -1,4 +1,6 @@
 const { transporter } = require("../config/email-config");
+const TicketRepository = require("../repository/ticket-repository");
+const ticketRepo = new TicketRepository();
 
 const sendBasicMail = (mailFrom, mailTo, mailSubject, mailBody) => {
     try {
@@ -14,6 +16,28 @@ const sendBasicMail = (mailFrom, mailTo, mailSubject, mailBody) => {
     }
 };
 
+const fetchPendingEmails = async () => {
+    try {
+        const response = await ticketRepo.getAll();
+        return response;
+    } catch (error) {
+        console.log("Something went worng in the service layer.");
+        throw { error };
+    }
+};
+
+const createNotification = async (data) => {
+    try {
+        const response = await ticketRepo.create(data);
+        return response;
+    } catch (error) {
+        console.log("Something went worng in the service layer.");
+        throw { error };
+    }
+};
+
 module.exports = {
     sendBasicMail,
+    fetchPendingEmails,
+    createNotification,
 };
